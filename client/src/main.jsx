@@ -11,7 +11,7 @@ import {
   Form
 } from 'react-router-dom'
 import {
-  Hero,
+  
   LoginPage,
   PostListPage,
   RegisterPage,
@@ -19,41 +19,47 @@ import {
   WritePage,
   HomePage
 } from './pages'
+import MainLayout from './layouts/MainLayout.jsx'
 
 
-const router = createBrowserRouter([{
-  path: "/",
-  element: <HomePage></HomePage>
-},
-{
-  path: "/posts",
-  element: <PostListPage></PostListPage>
-},
-{
-  path: "/:slug",
-  element: <PostListPage></PostListPage>
-},
-{
-  path: "/write",
-  element: (<WritePage></WritePage>)
-},
-{
-  path: "/login",
-  element: <LoginPage></LoginPage>
-
-  },
+const router = createBrowserRouter([
   {
-    path: "register",
-    element:<RegisterPage></RegisterPage>
-}
+    element: <MainLayout></MainLayout>,
+    children: [
+      {
+        path: "/",
+        element: <HomePage></HomePage>
+      },
+      {
+        path: "/posts",
+        element: <PostListPage></PostListPage>
+      },
+      {
+        path: "/:slug",
+        element: <SinglePostPage />
+      },
+      {
+        path: "/write",
+        element: (<WritePage></WritePage>)
+      },
+      {
+        path: "/login",
+        element: <LoginPage></LoginPage>
 
-
-
+      },
+      {
+        path: "register",
+        element: <RegisterPage></RegisterPage>
+      }
+    ]
+    
+  }
 ])
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <App />
+    <RouterProvider router={router}></RouterProvider>
+
   </StrictMode>,
 
 

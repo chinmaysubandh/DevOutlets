@@ -14,17 +14,18 @@ export const Navbar = () => {
             {/* Mobile Button */}
             <div className='md:hidden flex '>
                 <div className='text-3xl  cursor-pointer' onClick={() => setOpen((prev) => !(prev))} >
-                    {open ? "x" : "="}
+                    {open ? "x" : <img className='font-bold' height={18} width={20} src="\src\assets\menu.png" alt="" />}
+
                 </div>
             </div>
             {/* Mobile Link List */}
-            <div className={`md:hidden w-full h-screen flex flex-col items-center justify-center absolute top-16 gap-8 font-medium text-lg  transition-all ease-in-out ${open ? '-right-0':'-right-[100%]'} `}>
+            <div className={`md:hidden w-full h-screen flex flex-col items-center justify-center absolute top-16 gap-8 font-medium text-lg  transition-all ease-in-out ${open ? '-right-0' : '-right-[100%]'} `}>
                 <a href="/" >Home</a>
                 <a href="/" >Trending</a>
                 <a href="/" >Most Popular</a>
                 <a href="/" >About</a>
                 <a href="/">
-                    <button className='px-4 py-2 rounded-3xl bg-blue-800 text-white'>Login✌️</button>
+                    <button className='px-4 py-2 rounded-3xl bg-blue-600 text-white hover:shadow-black hover:shadow-xl/30 hover:bg-blue-950  '>Login✌️</button>
                 </a>
             </div>
             {/* Desktop Menu */}
@@ -34,9 +35,9 @@ export const Navbar = () => {
                 <a href="/" >Most Popular</a>
                 <a href="/" >About</a>
                 <a href="/">
-                    <button className='px-4 py-2 rounded-3xl bg-blue-800 text-white'>Login✌️</button>
-                </a> 
-                
+                    <button className='px-4 py-2 rounded-3xl bg-blue-600 text-white hover:bg-blue-950 hover:shadow-black hover:shadow-xl/30'>Login✌️</button>
+                </a>
+
             </div>
         </div>
     )

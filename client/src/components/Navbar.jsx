@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
+import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/clerk-react';
 
 
 
@@ -30,13 +31,20 @@ export const Navbar = () => {
             </div>
             {/* Desktop Menu */}
             <div className='hidden md:flex items gap-8 lx:gap-12 font-medium items-center'>
-                <a href="/" >Home</a>
-                <a href="/" >Trending</a>
-                <a href="/" >Most Popular</a>
-                <a href="/" >About</a>
-                <a href="/">
-                    <button className='px-4 py-2 rounded-3xl bg-blue-600 text-white hover:bg-blue-950 hover:shadow-black hover:shadow-xl/30'>Login✌️</button>
-                </a>
+                <Link to="/" >Trending</Link>
+                <Link to="/" >Most Popular</Link>
+                <Link to="/" >About</Link>
+                <Link to="/login">
+                    <button className='px-4 py-2 rounded-3xl bg-blue-600 text-white hover:bg-blue-950
+                     hover:shadow-black hover:shadow-xl/30'>Login✌️</button>
+                </Link>
+
+                <SignedOut>
+                    <SignInButton />
+                </SignedOut>
+                <SignedIn>
+                    <UserButton />
+                </SignedIn>
 
             </div>
         </div>

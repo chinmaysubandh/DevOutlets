@@ -26,7 +26,7 @@ const HomePage = () => {
             viewBox="0 0 200 200"
             width="200"
             height="200"
-            className='  text-lg tracking-widest'
+            className='  text-lg tracking-widest animate-spin animatedButton'
             
           >
             <path id="circlePath"

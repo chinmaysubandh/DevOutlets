@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import MainCategories from '../components/MainCategories'
 
 const HomePage = () => {
   return (
@@ -21,7 +22,7 @@ const HomePage = () => {
 
         </div>
         {/* animated button */}
-        <Link to='/write' className=' relative'>
+        <Link to='/write' className=' hidden md:block relative'>
           <svg
             viewBox="0 0 200 200"
             width="200"
@@ -35,8 +36,8 @@ const HomePage = () => {
               
             />
             <text>
-              <textPath href="#circlePath" startOffset="0%">Write your Story..</textPath>
-              <textPath href="#circlePath" startOffset="50%">Share your Idea..</textPath>
+              <textPath href="#circlePath" startOffset="0%">Write your Story.</textPath>
+              <textPath href="#circlePath" startOffset="50%">Share your Idea.</textPath>
             </text>
                        
           </svg>
@@ -59,6 +60,8 @@ const HomePage = () => {
         </Link>
 
       </div>
+      {/* categories */}
+      <MainCategories/>
       {/* Post list */}
     </div>
   )

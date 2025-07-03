@@ -15,13 +15,13 @@ export const Navbar = () => {
             </Link>
             {/* Mobile Button */}
             <div className='md:hidden flex '>
-                <div className='text-3xl  cursor-pointer' onClick={() => setOpen((prev) => !(prev))} >
-                    {open ? "x" : <img className='font-bold' height={18} width={20} src="\src\assets\menu.png" alt="" />}
+                <button className='text-3xl  cursor-pointer' onClick={() => setOpen((prev) => !(prev))} >
+                    {open ? "X" : <img className='font-bold' height={18} width={20} src="\src\assets\menu.png" alt="" />}
 
-                </div>
+                </button>
             </div>
             {/* Mobile Link List */}
-            <div className={`md:hidden w-full h-screen flex flex-col items-center justify-center absolute top-16 gap-8 font-medium text-lg  transition-all ease-in-out ${open ? '-right-0' : '-right-[100%]'} `}>
+            <div className={`md:hidden w-full h-screen flex flex-col items-center justify-center fixed top-16 gap-8 font-medium text-lg  transition-all duration-400 ease-in-out ${open ? ' translate-x-0' : ' translate-x-full'} `}>
                 <Link to="/" >Trending</Link>
                 <Link to="/" >Most Popular</Link>
                 <Link to="/" >About</Link>

@@ -66,6 +66,7 @@ const HomePage = () => {
       {/* Featured Posts */}
       <FeaturedPosts/>
       {/* Post list */}
+      
     </div>
   )
 }
